@@ -3,7 +3,9 @@ import { RegisterRoutes } from "../build/routes";
 
 export const app = express();
 
-// Use body parser to read sent json payloads
+var morgan = require('morgan')
+app.use(morgan('dev', ':method :url :status :res[content-length] - :response-time ms'));
+
 app.use(
   urlencoded({
     extended: true,

@@ -4,6 +4,8 @@ export type UserCreationParams = Pick<User, "email" | "name" | "phoneNumbers">;
 
 export class UsersService {
   public get(id: number, name?: string): User {
+    if (id == 2)
+      throw ("User 2 is error prone...");
     return {
       id,
       email: "jane@doe.com",
